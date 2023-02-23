@@ -1,0 +1,24 @@
+
+.contents{
+    margin-top: 50px;
+ margin-left: 100px; 
+}
+.paras h6{
+    color:rgb(110 107 107 / 72%);
+}
+
+
+
+.icons{
+    display: flex;
+    
+}
+.icons img{
+    width: 30px;
+}
+@media screen and (max-width:768px) {
+   .contents{
+    margin-left: 20px;
+   }
+}
+

@@ -1,0 +1,16 @@
+.header-body {
+    width: 100%;
+}
+.searchicon {
+    position: absolute;
+    left: 150px;
+    font-size: 20px;
+}
+#search {
+    border-radius: 15px;
+    padding-left: 30px;
+}
+.lists{
+    margin-left: 25px;
+    width: 200px;
+}

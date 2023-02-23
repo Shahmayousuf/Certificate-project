@@ -1,0 +1,30 @@
+.updatebanner
+{
+    color: rgb(57, 51, 51);
+
+    background-color: rgba(166, 186, 203, 0.566);
+    width: 100%;
+    min-height: 100vh;
+   
+    margin-top: 30px;
+    padding: 20px;
+}
+.formcontainer{
+    background-color: white;
+}
+.mb-3{
+    font-weight: bold;
+    color: rgb(105, 100, 100);
+}
+ .formcontrol{
+    background:rgba(128, 128, 128, 0.51)
+ }
+ .btns{
+    display: flex;
+    justify-content: end;
+    gap:15px;
+   
+ }
+ .btns button{
+    width: 100px;
+ }

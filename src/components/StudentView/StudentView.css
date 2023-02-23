@@ -1,0 +1,102 @@
+.studentbanner{
+    color: rgb(57, 51, 51);
+
+    background-color: rgba(166, 186, 203, 0.566);
+    width: 100%;
+    min-height: 100vh;
+   
+    margin-top: 30px;
+    padding: 30px;
+     
+
+ 
+   
+}
+
+.studentcotainer1{
+    max-width: 700px;
+    height: auto;
+    background-color: white;
+}
+.studentscontents{
+    padding: 10px;
+    position: relative;
+}
+.studentscontents h6{
+    padding-left: 18px;
+}
+
+.studentcotainer1 p{
+    padding-left: 20px;
+    margin-top: -5px;
+}
+
+
+.iconpara {
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.studentscontents img{
+    width: 125px;
+    position: absolute;
+    left: 300px;
+    top: 30px;
+}
+
+
+ @media screen and (max-width: 488px){
+   .studentscontents img{
+    width: 50px;
+    }
+}
+@media screen and (max-width: 417px){
+    .studentscontents img{
+     width: 20px;
+     }
+ }
+ @media screen and (max-width: 410px){
+    .studentscontents img{
+   display: none;
+     }
+ }
+ .Tablecourse{
+    margin-top: 10px;
+    background-color: white;
+    max-width: 700px;
+ }
+ .topsection{
+    justify-content: space-between;
+ }
+ .topsection button{
+   margin-bottom: 10px;
+ }
+ .topsection #greenbtn{
+    background-color: rgb(41, 138, 41);
+    border: none;
+ }
+ #dropdown-basic{
+    border-color: rgba(197, 185, 185, 0.792);
+ }
+ .actionbtns{
+    display: flex;
+    gap: 5px;
+    
+    
+ }
+ .actionbtns button{
+    height: 40px;
+    padding: 10px; 
+    
+}
+ #viewbtn{
+    width: 115px;
+    background-color: rgb(114, 175, 240);
+    border: none;
+    color: blue;
+   
+}
+#delbtn{
+    background-color: brown;
+    border: none;
+}

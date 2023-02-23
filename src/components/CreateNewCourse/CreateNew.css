@@ -1,0 +1,11 @@
+.btnss  {
+   
+   
+    display: flex;
+    gap: 10px;
+
+}
+.btnss button{
+    background-color: grey;
+    border: none;
+}

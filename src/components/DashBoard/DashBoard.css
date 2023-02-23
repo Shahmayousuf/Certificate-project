@@ -1,0 +1,125 @@
+.Dashboard {
+  color: rgb(57, 51, 51);
+  background-color: rgba(166, 186, 203, 0.566);
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 30px;
+  padding: 20px;
+}
+.main div{
+    position: relative;
+    border-radius: 7px;
+}
+.div1{
+    background-color: rgb(140, 162, 233);
+    color: rgb(31, 77, 228);
+    width: 400px;
+    height: 200px;
+    position: relative;
+    
+}
+.div1 img{
+    width: 165px;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    height: 180px;
+
+}
+.div1 h4 {
+    padding: 20px;
+}
+.div1 p {
+   padding-left: 25px;
+}
+
+
+.div11{
+    background-color: white;
+    width: 400px;
+    height: 200px;
+    
+}
+ .div11{
+    display: flex;
+ }
+
+.profilepara1 {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+.profilepara2{
+  position: absolute;
+  top: 80px;
+  left: 30px
+
+}
+.profilepara2 button{
+    color: white;
+    background-color: rgb(78, 78, 230);
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+
+}
+.profilepara3{
+    position: absolute;
+    top: 80px;
+    left: 50px
+  
+}
+.div2{
+    
+    background-color: white;
+    max-width: 400px;
+    width: 400px;
+    height: 195px;
+    border-radius: 5px;
+    position: relative;
+}
+.iconcourse{
+     position: absolute;
+     left:250px;
+     font-size: 30px;
+     top:20px
+}
+.divs{
+    display: flex;
+
+    align-items: center;  
+    margin-left: 80px;  
+}
+.div2main{
+  
+    display: grid;
+    grid-template-columns: auto auto;
+     gap: 10px;
+     margin-left: 10px;
+     align-items: center;
+}
+@media only screen and (max-width: 1325px)
+{      
+    .divs{
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;  
+    }
+}
+@media only screen and (max-width: 837px)
+{      
+    .divs{
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;  
+    }
+    .div2main{
+        display: grid;
+        grid-template-columns: auto;
+         gap: 10px;
+         margin-left: 0px;
+    }
+}
+    
