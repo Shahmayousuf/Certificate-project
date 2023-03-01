@@ -100,3 +100,24 @@
     background-color: brown;
     border: none;
 }
+.print{
+    display: flex;
+    justify-content: space-between;
+}
+.print button{
+    margin: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    font-weight: bold;
+}
+.print button:hover{
+  color:black;
+  background: rgb(97, 148, 231);
+}
+@media only screen and (max-width: 1025px)
+{
+    .studentscontents img{
+        width:80px;
+        left: 250px;
+    }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./CreateCourse.css";
 import Form from "react-bootstrap/Form";
 import { Col, Row } from "react-bootstrap";
@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { CreateCourseApi } from "../../Store/CourseSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { map } from "lodash";
+import { CatogryApi } from "../../Store/CatogrySlice"; 
 
 
 const CreateCourse = () => {
@@ -28,11 +29,15 @@ const CreateCourse = () => {
   const { allcatogrys } = useSelector((state) => ({
     allcatogrys: state.catogry.allcatogrys,
   }));
-  const allcatogrydata = allcatogrys.results;
-  console.log(allcatogrydata); 
+  // const allcatogrydata = allcatogrys.results;
+  // console.log(allcatogrydata); 
 
   const coursecatogry = allcatogrys.results;
   console.log(coursecatogry);
+  useEffect(()=>{
+    dispatch(CatogryApi())
+  },[])
+        
   return (
     <div>
       <Layout>
@@ -47,6 +52,7 @@ const CreateCourse = () => {
                     <Form.Control
                       onChange={(e) => handleCourse(e)}
                       type="text"
+                      name="course_name"
                       style={{ background: "rgba(128, 128, 128, 0.51)" }}
                     />
                   </Form.Group>
@@ -56,6 +62,7 @@ const CreateCourse = () => {
                     <Form.Control
                       onChange={(e) => handleCourse(e)}
                       type="number"
+                      name="duration"
                       style={{ background: "rgba(128, 128, 128, 0.51)" }}
                     />
                   </Form.Group>

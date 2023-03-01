@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { Action } from "@remix-run/router";
+import { toast } from "react-toastify";
 import { axiosApi } from "./axios-method"; 
 
 
@@ -62,6 +63,7 @@ export const StudentSlice = createSlice({
     [StudentAPi.fulfilled]: (state, action) => {
       console.log("data fullfilled");
       state.allStudents = action.payload;
+      toast.success('Item fulfilled')
     },
     [StudentviewApi.fulfilled]: (state, action) => {
       console.log("data fullfilled");
@@ -70,6 +72,7 @@ export const StudentSlice = createSlice({
     [DeleteStudentApi.fulfilled]:(state,action)=>{
       console.log("data deleted");
       state.deleteview=action.payload
+      
     },
     [UpdateStudentApi.fulfilled]:(state,action)=>{
       console.log("data updated");

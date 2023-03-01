@@ -11,7 +11,9 @@
 .tablebanner{
     background-color: white;
     width:100%;
+    box-shadow: 5px 10px 18px #9e9c9c;
 }
+
 @media only screen and (max-width: 821px)
    {
 

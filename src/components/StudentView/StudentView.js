@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./StudentView.css";
 import { Button } from "react-bootstrap";
 import { SlLocationPin } from "react-icons/sl";
@@ -18,6 +18,8 @@ import {
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { DeleteStudentApi } from "../../Store/StudentSlice";
 import { map } from "lodash";
+
+import { Typography, Box, Modal } from "@mui/material";
 
 const StudentView = () => {
   const params = useParams();
@@ -49,13 +51,61 @@ const StudentView = () => {
   });
   const course = singleview.student_courses;
   console.log(course);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const style = {
+    position: "absolute",
+    left: "50%",
+    top: "100px",
+    textAlign: "centre",
+    width: "500px",
+   
+  background: '#c6c6c6'
+  };
+
   return (
     <div>
       <Layout>
+        <div>
+          <Modal
+            open={showModal}
+            onClose={() => setShowModal(false)}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Conform Delete
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Are You Sure! Do You want to delete?
+              </Typography>
+              <div className="btns">
+                <Button
+                  onClick={handleClick}
+                  style={{
+                    background: "#601f1f",
+                    color: "white",
+                    border: "none",
+                  }}
+                >
+                  Ok
+                </Button>
+                <Button onClick={() => setShowModal(false)}>Cancel</Button>
+              </div>
+            </Box>
+          </Modal>
+        </div>
         <div className="studentbanner">
-          <h5>STUDENT VIEW</h5>
           <Row>
-            <Col lg="12">
+            <Col lg="6">
+              <div className="print">
+                <h5>STUDENT VIEW</h5>
+                <Link to={"/CertificatePage"}>
+                  <Button>Print Certificate</Button>
+                </Link>
+              </div>
               <div className="studentcotainer1">
                 <div className="studentscontents">
                   <h6>{singleview.full_name}</h6>
@@ -82,7 +132,7 @@ const StudentView = () => {
 
                   <div className="btns">
                     <Button
-                      onClick={handleClick}
+                      onClick={() => setShowModal(true)}
                       style={{
                         background: "#601f1f",
                         color: "white",
@@ -106,7 +156,7 @@ const StudentView = () => {
           </Row>
 
           <Row>
-            <Col lg="12">
+            <Col lg="6">
               <div className="Tablecourse p-3" style={{ overflowX: "auto" }}>
                 <div className="topsection d-flex ">
                   <h5>STUDENT COURSE</h5>
@@ -114,11 +164,12 @@ const StudentView = () => {
                     <Button id="greenbtn">+ Create New Course</Button>
                   </Link>
                 </div>
+
                 <Table striped bordered hover>
                   <thead>
                     <tr>
                       <th>#</th>
-                     
+
                       <th>Course Name</th>
                       <th>Duration</th>
                       <th>Course Catogry</th>
@@ -130,10 +181,12 @@ const StudentView = () => {
                         <td>
                           <input type="checkbox"></input>
                         </td>
-                        
+
                         <td>{item.course.course_name}</td>
                         <td>{item.course.duration}</td>
-                        <td>{item.course.course_category.course_category_name}</td>
+                        <td>
+                          {item.course.course_category.course_category_name}
+                        </td>
                         <td>
                           <div className="actionbtns">
                             <Button id="viewbtn">View details </Button>

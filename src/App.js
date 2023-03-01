@@ -4,7 +4,6 @@ import LoginPage from "./Pages/LoginPage";
 import DashBoardPage from "./Pages/DashBoardPage";
 import Students from "./components/StudentsPage/Students";
 
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CreateStudent from "./components/CreateStudent/CreateStudent";
 import UpdateStudent from "./components/UpdateStudent/UpdateStudent";
@@ -17,6 +16,9 @@ import UpdateCourseCtgry from "./components/UpdateCourseCtgry/UpdateCourseCtgry"
 import CreateCourseCtgry from "./components/CreateCourseCatogorypage/CreateCourseCtgry";
 import StudentView from "./components/StudentView/StudentView";
 import CreateNew from "./components/CreateNewCourse/CreateNew";
+import CertificatePage from "./Pages/CertificatePage";
+
+  
 function App() {
   return (
     <div className="App">
@@ -29,19 +31,19 @@ function App() {
           <Route path="/updatestudent/:id" element={<UpdateStudent />} />
           <Route path="/createstudent" element={<CreateStudent />} />
           <Route path="/course" element={<Courses />} />
-          <Route path="/updatecsourse" element={<UpdateCourse />} />
+          <Route path="/updatecourse/:id" element={<UpdateCourse />} />
           <Route path="/createcourse" element={<CreateCourse />} />
           <Route path="/coursecatogory" element={<CourseCatogory />} />
-          <Route path="/updatecoursectgry"  element={<UpdateCourseCtgry />} />
+          <Route
+            path="/updatecoursectgry/:id"
+            element={<UpdateCourseCtgry />}
+          />
           <Route path="/createcoursectgry" element={<CreateCourseCtgry />} />
-          <Route path="/studentview/:id" element={<StudentView/>}/>
-          <Route path='/CreateNew/:id' element={<CreateNew/>}>
-
-          </Route>
+          <Route path="/studentview/:id" element={<StudentView />} />
+          <Route path="/CreateNew/:id" element={<CreateNew />} />
+          <Route path="/CertificatePage" element={<CertificatePage />} />
         </Routes>
       </Router>
-
-      
     </div>
   );
 }
